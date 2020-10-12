@@ -1,0 +1,43 @@
+﻿@using System.IO;
+@{
+    ViewData["Title"] = "FileList";
+    //string curdir = Directory.GetCurrentDirectory();
+    string dir = "G:\\";
+    string[] files = Directory.GetFiles(dir);
+    int i = 1;
+
+
+}
+
+<h2 class="alert alert-info text-sm-center">FileList</h2>
+@*@foreach (var f in files)
+{
+    <h2>@f</h2>
+}*@
+
+<table class="table table-responsive table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Sl No.</th>
+            <th>File Name</th>
+            <th>File Size</th>
+            <th>Full path</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in files)
+        {
+
+
+            <tr>
+                <td>@i.</td>
+                <td>@System.IO.Path.GetFileNameWithoutExtension(f)</td>
+                <td>@System.IO.Path.GetExtension(f)</td>
+                <td>@f</td>
+            </tr>
+        }
+    </tbody>
+    
+    </table>
+
+
